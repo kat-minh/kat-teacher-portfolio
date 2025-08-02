@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("all")
@@ -51,7 +52,7 @@ export default function Portfolio() {
       id: 5,
       title: "Accelerometer Detector",
       category: "microbit",
-      image: "/Accelerometer Detector.png",
+      image: "/accelerometer-detector.png",
       year: "2025",
       description: "Motion detection system using BBC Micro:bit accelerometer",
       link: "https://www.youtube.com/shorts/AAwRWlxlTwU",
@@ -60,7 +61,7 @@ export default function Portfolio() {
       id: 6,
       title: "Morse Code System",
       category: "microbit",
-      image: "/Morse Code System.png",
+      image: "/morse-code-system.png",
       year: "2025",
       description: "Morse code communication using BBC Micro:bit radio",
       link: "https://www.youtube.com/shorts/f5vGjIgXMG4",
@@ -98,13 +99,12 @@ export default function Portfolio() {
                 <Card className="overflow-hidden bg-zinc-900">
                   <CardContent className="p-0">
                     <div className="group relative aspect-square">
-                      <img
+                      <Image
                         src={work.image || "/placeholder.svg"}
                         alt={work.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = "/placeholder.svg"
-                        }}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         <h3 className="text-xl font-semibold text-white text-center px-4">{work.title}</h3>
