@@ -2,38 +2,39 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function Certifications() {
   const certifications = [
     {
       title: "CertNexus Certified Ethical Emerging Technologist",
       category: "Professional Certificate",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/certnexus-certified-ethical-emerging-technologist.png",
     },
     {
       title: "Ethics of Artificial Intelligence",
       category: "Specialization",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/ethics-of-artificial-intelligence.png",
     },
     {
       title: "Software Development Lifecycle",
       category: "Specialization",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/software-development-lifecycle.png",
     },
     {
       title: "Java Database Connectivity",
       category: "Specialization",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/java-database-connectivity.png",
     },
     {
-      title: "Web Development & Coding",
+      title: "Web Design for Everybody",
       category: "Specialization",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/web-design-for-everybody.png",
     },
     {
       title: "Object Oriented Programming in Java",
       category: "Specialization",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/object-oriented-programming-in-java.png",
     },
   ]
 
@@ -60,11 +61,13 @@ export default function Certifications() {
             >
               <Card className="overflow-hidden bg-zinc-800 hover:bg-zinc-700 transition-colors">
                 <CardContent className="p-0">
-                  <div className="aspect-[4/3]">
-                    <img
+                  <div className="aspect-[4/3] relative">
+                    <Image
                       src={cert.image || "/placeholder.svg"}
                       alt={cert.title}
-                      className="h-full w-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   <div className="p-4">
