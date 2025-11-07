@@ -7,6 +7,11 @@ import Image from "next/image"
 export default function Certifications() {
   const certifications = [
     {
+      title: "IBSTPI Standards",
+      category: "FPT University Certificate",
+      image: "/ibstpi-certificate.png",
+    },
+    {
       title: "CertNexus Certified Ethical Emerging Technologist",
       category: "Professional Certificate",
       image: "/certnexus-certified-ethical-emerging-technologist.png",
